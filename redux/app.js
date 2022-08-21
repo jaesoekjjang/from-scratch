@@ -34,7 +34,6 @@ const reducer = (state = initState, action) => {
 
 const {getState, subscribe, dispatch} = createStore(reducer)
 
-
 const $todo = document.querySelector('#todo')
 const render = () => {
   $todo.innerHTML = getState().map(task => (

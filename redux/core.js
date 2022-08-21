@@ -3,11 +3,11 @@ const deepFreeze = (obj) => {
     Object.freeze(obj)
   }
 
-  for(const key in obj) {
-    if(typeof obj[key] == 'object'){
+  Object.keys(obj).forEach(key => {
+    if(typeof obj[key] === 'object'){
         deepFreeze(obj[key])
       }
-  }
+  })
 }
 
 export const createStore = (reducer) => {
